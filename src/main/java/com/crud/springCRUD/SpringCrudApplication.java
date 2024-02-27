@@ -1,10 +1,7 @@
 package com.crud.springCRUD;
-
 import com.crud.springCRUD.DAO.StudentDAO;
 import com.crud.springCRUD.entity.Student;
-
 import java.util.List;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class SpringCrudApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCrudApplication.class, args);
 	}
@@ -22,9 +18,17 @@ public class SpringCrudApplication {
 		return args -> {
 			// createMultipleStudent(studentDAO);
 			// viewStudent(studentDAO);
-			viewStudentAll(studentDAO);
+			// viewStudentAll(studentDAO);
+			viewStudentByQuery(studentDAO);
 			
 		};
+	}
+
+	private void viewStudentByQuery(StudentDAO studentDAO) {
+		List <Student> studentAll = studentDAO.findByLastName("parker");
+		for(Student x:studentAll){
+			System.out.println(x);
+		}
 	}
 
 	private void viewStudentAll(StudentDAO studentDAO) {
