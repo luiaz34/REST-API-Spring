@@ -20,9 +20,14 @@ public class SpringCrudApplication {
 			// viewStudent(studentDAO);
 			// viewStudentAll(studentDAO);
 			// viewStudentByQuery(studentDAO);
-			updateStudent(studentDAO);
-			
+			// updateStudent(studentDAO);
+			deleteStudent(studentDAO);
 		};
+	}
+
+	private void deleteStudent(StudentDAO studentDAO) {
+		int id = 2;
+		studentDAO.delete(id);
 	}
 
 	private void updateStudent(StudentDAO studentDAO) {
