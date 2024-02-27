@@ -19,9 +19,18 @@ public class SpringCrudApplication {
 			// createMultipleStudent(studentDAO);
 			// viewStudent(studentDAO);
 			// viewStudentAll(studentDAO);
-			viewStudentByQuery(studentDAO);
+			// viewStudentByQuery(studentDAO);
+			updateStudent(studentDAO);
 			
 		};
+	}
+
+	private void updateStudent(StudentDAO studentDAO) {
+		int newid = 2;
+		Student student = studentDAO.findById(2); 
+		student.setEmail("okaynasa@gmail.com");
+		studentDAO.update(student);
+
 	}
 
 	private void viewStudentByQuery(StudentDAO studentDAO) {
