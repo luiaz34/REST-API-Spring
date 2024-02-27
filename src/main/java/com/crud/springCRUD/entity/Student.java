@@ -65,11 +65,13 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "{\n" +
+                "  \"id\": " + id + ",\n" +
+                "  \"first_name\": \"" + first_name + "\",\n" +
+                "  \"last_name\": \"" + last_name + "\",\n" +
+                "  \"email\": \"" + email + "\"\n" +
+                "}";
     }
+
+
 }

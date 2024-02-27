@@ -17,14 +17,28 @@ public class SpringCrudApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return args -> {
-			createStudent(studentDAO);
+			// createMultipleStudent(studentDAO);
+			viewStudent(studentDAO);
 		};
 	}
 
-	private void createStudent(StudentDAO studentDAO) {
-		System.out.println("creating the new student object...");
-		Student new1 = new Student("khaing", "myal", "khaing@gmail.com");
-		studentDAO.save(new1);
-		System.out.println(new1.getId());
+	private void viewStudent(StudentDAO studentDAO) {
+		int id1= 1;
+		Student view1 = studentDAO.findById(id1);
+		System.out.println(view1);
 	}
+
+	private void createMultipleStudent(StudentDAO studentDAO) {
+		// Create multiple student 
+		Student new1 = new Student("tom", "holland", "tombholland@gmail.com");
+		Student new2 = new Student("jack", "hollow", "jackhollow@gmail.com");
+		Student new3 = new Student("mary", "james", "maryjames@gmail.com");
+		Student new4 = new Student("peter", "parker", "peterparker@gmail.com");
+		// save the object
+		studentDAO.save(new1);
+		studentDAO.save(new2);
+		studentDAO.save(new3);
+		studentDAO.save(new4);
+	}
+
 }
