@@ -7,20 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.khaing.CRUDdemo.DAO.EmployeeDAO;
+import com.khaing.CRUDdemo.Service.EmployeeService;
 import com.khaing.CRUDdemo.entity.Employee;
 
 @RestController
 @RequestMapping("/api")
 public class EmployeeRest {
-    private EmployeeDAO employeeDAO;
+    private EmployeeService employeeService;
 
-    public EmployeeRest(EmployeeDAO theEmployeeDAO){
-        this.employeeDAO = theEmployeeDAO;
+    public EmployeeRest(EmployeeService theEmployeeService){
+        this.employeeService = theEmployeeService;
     }
 
     @GetMapping("/employees")
     public List<Employee> findAll(){
-        return employeeDAO.findAll();
+        return employeeService.findAll();
     }
 
 }
