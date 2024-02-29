@@ -21,8 +21,34 @@ public class EmployeeDAOImple implements EmployeeDAO{
 
     @Override
     public List<Employee> findAll() {
-        TypedQuery<Employee> query = em.createQuery("from Employee", Employee.class);
+        TypedQuery<Employee> query = em.createQuery("From Employee", Employee.class);
         return query.getResultList();
     }
 
+    @Override
+    public Employee findById(int id) {
+        // get employee
+        Employee employee = em.find(Employee.class, id);
+        return employee;
+        // retunr the employee
+    }
+
+    @Override
+    public Employee save(Employee thEmployee) {
+        // save the employee
+        Employee employee = em.merge(thEmployee);
+        // return the employee
+        return employee;
+    }
+
+    @Override
+    public void deleteById(int id) {
+        // find the employee by id
+        Employee employee = em.find(Employee.class, id);
+        // delete the employee 
+        em.remove(employee);
+    
+    
+
+}
 }
