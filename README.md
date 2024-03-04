@@ -20,7 +20,7 @@ The project consists of several Java classes organized into packages:
 
 4. **com.khaing.CRUDdemo**: Contains the main application class.
 
-   - **CruDdemoApplication**: Main class with the SpringApplication configuration.
+   - **CruDdemoApplication**: Main class with the SpringApplication configuration.(run this java alone)
 
 ## API Endpoints
 
