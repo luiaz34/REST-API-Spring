@@ -82,4 +82,3 @@ This technical documentation provides an overview of the Spring CRUD API for man
 
 ---
 
-Feel free to customize this template according to your specific requirements or add more details as needed.
