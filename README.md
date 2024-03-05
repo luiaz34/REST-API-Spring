@@ -59,11 +59,6 @@ The API exposes the following endpoints for managing employee data:
 - **Request**: Employee ID as a path variable.
 - **Response**: Status message indicating the deletion operation's success.
 
-## Error Handling
-
-- If an employee with a specified ID is not found, a RuntimeException is thrown with an appropriate error message.
-- Error responses are returned with appropriate HTTP status codes.
-
 ## Usage
 
 1. Start the application by running the `CruDdemoApplication` class.
