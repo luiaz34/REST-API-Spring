@@ -70,6 +70,7 @@ The API exposes the following endpoints for managing employee data:
 - Spring Boot: Framework for creating stand-alone, production-grade Spring-based applications.
 - Spring Data JPA: Part of the larger Spring Data project that makes it easier to implement JPA-based repositories.
 - Jakarta Persistence API: A set of classes and interfaces that define the Jakarta Persistence API.
+- Spring Security: Provides comprehensive security services for Java EE-based enterprise software applications.
   
 ## Conclusion
 
