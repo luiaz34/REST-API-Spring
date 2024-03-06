@@ -1,7 +1,6 @@
 package com.khaing.CRUDdemo.Rest;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.khaing.CRUDdemo.DAO.EmployeeRepo;
 import com.khaing.CRUDdemo.entity.Employee;
 
@@ -28,6 +26,7 @@ public class EmployeeRest {
         return employeeRepo.findAll();
     }
 
+    @SuppressWarnings({ "unused", "rawtypes" })
     @GetMapping("/employees/{employeeId}")
     public Optional findById(@PathVariable int employeeId){
         Optional employee = employeeRepo.findById(employeeId);
@@ -38,18 +37,21 @@ public class EmployeeRest {
       
     }
 
-    @PostMapping("/employees")
+    @PostMapping(value = { "/employees", "/employees/" })
     public Employee createEmployee(@RequestBody Employee employee){
         employee.setId(0);
         return employeeRepo.save(employee);
     }
-    @PutMapping("/employees")
+    @SuppressWarnings("null")
+    @PutMapping(value = { "/employees", "/employees/" })
     public Employee updateEmployee(@RequestBody Employee employee){
         return employeeRepo.save(employee);
     }
 
+    @SuppressWarnings("unused")
     @DeleteMapping("/employees/{id}")
     public String deletEmployee(@PathVariable int id){
+        @SuppressWarnings("rawtypes")
         Optional employee = employeeRepo.findById(id);
         if (employee==null){
             throw new RuntimeException("not found");
